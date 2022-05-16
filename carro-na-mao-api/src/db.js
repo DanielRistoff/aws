@@ -1,8 +1,8 @@
 const sequelize = require("sequelize");
-const database = new sequelize("CarroNaMao", "root", "1234", {
-  dialect: "mssql",
-  host: "172.17.0.2",
-  port: 3306,
+const database = new sequelize("carronamao", "postgres", "root", {
+  dialect: "postgres",
+  host: "localhost",
+  port: 5432,
 });
 
 database.sync();
