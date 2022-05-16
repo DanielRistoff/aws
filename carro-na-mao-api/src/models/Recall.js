@@ -4,7 +4,7 @@ const shema = "";
 
 class Recall extends sequelize.Model {}
 
-Car.init(
+Recall.init(
   {
     Id: {
       type: sequelize.INTEGER,
