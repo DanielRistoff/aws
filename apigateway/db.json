@@ -1,0 +1,40 @@
+{
+    "sessao": [
+        {
+            "id": 1, 
+            "nome": "Daniel Ristoff Paz",
+            "email": "teste@teste.com.br"
+        }
+    ],
+    "produto": [
+        {
+            "id": 1, 
+            "nome": "Oleo 3w30",
+            "preco": "43",
+            "medida": "litro"
+        },
+        {
+            "id": 2, 
+            "nome": "Oleo 5w30",
+            "preco": "49",
+            "medida": "litro"
+        }
+    ],
+    "pedido": [
+        {
+            "id": 1, 
+            "produto": 1,
+            "usuario": 1
+        }
+    ],
+    "pessoa": [
+        {
+            "id": 1, 
+            "nome": "Daniel Ristoff Paz",
+            "email": "teste@teste.com.br",
+            "idade": 28,
+            "estadoCivil": "Casado",
+            "cidade": "Curitiba"
+        }
+    ]
+}
