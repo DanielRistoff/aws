@@ -2,24 +2,26 @@ const sequelize = require("sequelize");
 const database = require("../db");
 const shema = "";
 
-class CarRecall extends sequelize.Model {}
+class KindOfService extends sequelize.Model {}
 
-Car.init(
+KindOfService.init(
   {
-    IdCar: {
+    id: {
       type: sequelize.INTEGER,
+      autoIncrement: true,
       allowNull: false,
+      primaryKey: true,
     },
-    IdREcall: {
-      type: sequelize.INTEGER,
+    description: {
+      type: sequelize.STRING,
       allowNull: false,
     },
   },
   {
     sequelize: database,
-    modelName: "tbCarRecall",
+    modelName: "kind_of_service",
     shema,
   }
 );
 
-module.exports = CarRecall;
+module.exports = KindOfService;

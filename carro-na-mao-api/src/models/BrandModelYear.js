@@ -2,38 +2,30 @@ const sequelize = require("sequelize");
 const database = require("../db");
 const shema = "";
 
-class Recall extends sequelize.Model {}
+class BrandModelYear extends sequelize.Model {}
 
-Recall.init(
+BrandModelYear.init(
   {
-    Id: {
+    id: {
       type: sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    StartYear: {
-      type: sequelize.DATE,
+    brand_model_id: {
+      type: sequelize.INTEGER,
       allowNull: false,
     },
-    FinalYear: {
-      type: sequelize.DATE,
-      allowNull: false,
-    },
-    Model: {
-      type: sequelize.STRING,
-      allowNull: false,
-    },
-    Description: {
+    year: {
       type: sequelize.STRING,
       allowNull: false,
     },
   },
   {
     sequelize: database,
-    modelName: "tbRecall",
+    modelName: "brand_model_year",
     shema,
   }
 );
 
-module.exports = Recall;
+module.exports = BrandModelYear;

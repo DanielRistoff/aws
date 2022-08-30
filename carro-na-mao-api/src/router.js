@@ -1,34 +1,64 @@
 const express = require("express");
-const controllerCar = require("./controllers/CarController");
-const recallController = require("./controllers/RecallController");
-const scheduleController = require("./controllers/ScheduleController");
+const controllerBrandModelYear = require("./controllers/BrandModelYearController");
+const controllerKindOfService = require("./controllers/KindOfServiceController");
+const controllerStickNote = require("./controllers/StickNoteController");
+const controllerVehicle= require("./controllers/VehicleController");
+const controllerVehicleStickNote= require("./controllers/VehicleStickNoteController");
 
 const routes = express.Router();
 
-routes.get("/v1/public/cars", controllerCar.findAll);
+routes.get("/v1/public/brand-model-year", controllerBrandModelYear.findAll);
 
-routes.get("/v1/public/cars/:id", controllerCar.findAllById);
+routes.get("/v1/public/brand-model-year/:id", controllerBrandModelYear.findAllById);
 
-routes.post("/v1/public/cars", controllerCar.create);
+routes.post("/v1/public/brand-model-year", controllerBrandModelYear.create);
 
-routes.put("/v1/public/cars/:id", controllerCar.update);
+routes.put("/v1/public/brand-model-year/:id", controllerBrandModelYear.update);
 
-routes.delete("/v1/public/cars/:id", controllerCar.delete);
+routes.delete("/v1/public/brand-model-year/:id", controllerBrandModelYear.delete);
 
-routes.get("/v1/public/schedule/:id", scheduleController.findAllById);
 
-routes.post("/v1/public/schedule", scheduleController.create);
+routes.get("/v1/public/kind-of-servicer", controllerKindOfService.findAll);
 
-routes.put("/v1/public/schedule/:id", scheduleController.update);
+routes.get("/v1/public/kind-of-servicer/:id", controllerKindOfService.findAllById);
 
-routes.delete("/v1/public/schedule/:id", scheduleController.delete);
+routes.post("/v1/public/kind-of-servicer", controllerKindOfService.create);
 
-routes.get("/v1/public/recall/:id", recallController.findAllById);
+routes.put("/v1/public/kind-of-servicer/:id", controllerKindOfService.update);
 
-routes.post("/v1/public/recall", recallController.create);
+routes.delete("/v1/public/kind-of-servicer/:id", controllerKindOfService.delete);
 
-routes.put("/v1/public/recall/:id", recallController.update);
 
-routes.delete("/v1/public/recall/:id", recallController.delete);
+routes.get("/v1/public/stick-note", controllerStickNote.findAll);
+
+routes.get("/v1/public/stick-note/:id", controllerStickNote.findAllById);
+
+routes.post("/v1/public/stick-note", controllerStickNote.create);
+
+routes.put("/v1/public/stick-note/:id", controllerStickNote.update);
+
+routes.delete("/v1/public/stick-note/:id", controllerStickNote.delete);
+
+
+routes.get("/v1/public/vehicle", controllerVehicle.findAll);
+
+routes.get("/v1/public/vehicle/:id", controllerVehicle.findAllById);
+
+routes.post("/v1/public/vehicle", controllerVehicle.create);
+
+routes.put("/v1/public/vehicle/:id", controllerVehicle.update);
+
+routes.delete("/v1/public/vehicle/:id", controllerVehicle.delete);
+
+
+routes.get("/v1/public/vehicle-stick-note", controllerVehicleStickNote.findAll);
+
+routes.get("/v1/public/vehicle-stick-note/:id", controllerVehicleStickNote.findAllById);
+
+routes.post("/v1/public/vehicle-stick-note", controllerVehicleStickNote.create);
+
+routes.put("/v1/public/vehicle-stick-note/:id", controllerVehicleStickNote.update);
+
+routes.delete("/v1/public/vehicle-stick-note/:id", controllerVehicleStickNote.delete);
 
 module.exports = routes;

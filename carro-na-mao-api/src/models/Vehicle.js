@@ -2,38 +2,38 @@ const sequelize = require("sequelize");
 const database = require("../db");
 const shema = "";
 
-class Car extends sequelize.Model {}
+class Vehicle extends sequelize.Model {}
 
-Car.init(
+Vehicle.init(
   {
-    Id: {
+    id: {
       type: sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    Brand: {
+    board: {
       type: sequelize.STRING,
       allowNull: false,
     },
-    Model: {
+    cellphone: {
       type: sequelize.STRING,
       allowNull: false,
     },
-    Year: {
+    vin: {
       type: sequelize.STRING,
       allowNull: false,
     },
-    Plate: {
-      type: sequelize.STRING,
+    brand_model_year_id: {
+      type: sequelize.INTEGER,
       allowNull: false,
-    },
+    }
   },
   {
     sequelize: database,
-    modelName: "tbCar",
+    modelName: "vehicle",
     shema,
   }
 );
 
-module.exports = Car;
+module.exports = Vehicle;

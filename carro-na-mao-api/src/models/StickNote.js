@@ -1,51 +1,52 @@
 const sequelize = require("sequelize");
 const database = require("../db");
+const KindOfService = require("./KindOfService");
 const shema = "";
 
-class Schedule extends sequelize.Model {}
+class StickNote extends sequelize.Model {}
 
-Schedule.init(
+StickNote.init(
   {
-    Id: {
+    id: {
       type: sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
-    Date: {
-      type: sequelize.DATE,
-      allowNull: false,
-    },
-    Hour: {
-      type: sequelize.TIME,
-      allowNull: false,
-    },
-    Odometer: {
-      type: sequelize.INTEGER,
-      allowNull: true,
-    },
-    KindOfService: {
+    date: {
       type: sequelize.STRING,
       allowNull: false,
     },
-    Note: {
+    hour: {
       type: sequelize.STRING,
       allowNull: false,
     },
-    Local: {
+    kind_of_service_id: {
+      type: KindOfService,
+      allowNull: false,
+    },
+    note: {
       type: sequelize.STRING,
       allowNull: false,
     },
-    IdCar: {
-      type: sequelize.INTEGER,
+    status: {
+      type: sequelize.STRING,
+      allowNull: false,
+    },
+    created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    update: {
+      type: DataTypes.DATE,
       allowNull: false,
     },
   },
   {
     sequelize: database,
-    modelName: "tbSchedule",
+    modelName: "stick_note",
     shema,
   }
 );
 
-module.exports = Schedule;
+module.exports = StickNote;
