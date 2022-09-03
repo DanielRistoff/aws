@@ -5,6 +5,6 @@ const database = new sequelize("carronamao", "postgres", "root", {
   port: 5432,
 });
 
-database.sync();
+//database.sync();
 
 module.exports = database;

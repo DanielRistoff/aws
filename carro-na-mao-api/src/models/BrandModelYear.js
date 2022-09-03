@@ -1,30 +1,32 @@
-const sequelize = require("sequelize");
+const Sequelize = require("sequelize");
 const database = require("../db");
 const shema = "";
 
-class BrandModelYear extends sequelize.Model {}
-
-BrandModelYear.init(
+const BrandModelYear = database.define("brand_model_year", 
   {
     id: {
-      type: sequelize.INTEGER,
+      type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
       primaryKey: true,
     },
     brand_model_id: {
-      type: sequelize.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: false,
+      validator: {
+        notNull: true,
+        isInt: true,
+      }
     },
     year: {
-      type: sequelize.STRING,
+      type: Sequelize.STRING,
       allowNull: false,
     },
   },
   {
-    sequelize: database,
-    modelName: "brand_model_year",
-    shema,
+    freezeTableName: true,
+    createdAt: false,
+    updatedAt: false,
   }
 );
 

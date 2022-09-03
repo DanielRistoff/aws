@@ -11,7 +11,7 @@ module.exports = {
       const brandModelYear = await BrandModelYear.findAll();
       return res.json(brandModelYear);
     } catch (erro) {
-      return console.error("Erro na findAll (BrandModelYearController) : ", erro);
+      return res.status(500).send({error: "Erro findAll (BrandModelYearController)"});
     }
   },
 
@@ -23,7 +23,7 @@ module.exports = {
       });
       return res.json(brandModelYear);
     } catch (erro) {
-      return console.error("Erro na create (BrandModelYearController): ", erro);
+      return res.status(500).send({error: "Erro create (BrandModelYearController)"});
     }
   },
 
@@ -38,7 +38,7 @@ module.exports = {
 
       return res.json(brandModelYear);
     } catch (erro) {
-      return console.error("Erro na update (BrandModelYearController): ", erro);
+      return res.status(500).send({error: "Erro na update (BrandModelYearController)"});
     }
   },
 
@@ -48,7 +48,7 @@ module.exports = {
 
       return res.json(brandModelYear);
     } catch (erro) {
-      return console.error("Erro na findAllById (BrandModelYearController): ", erro);
+      return res.status(500).send({error: "Erro findAllById (BrandModelYearController)"});
     }
   },
 
@@ -58,7 +58,7 @@ module.exports = {
       await brandModelYear.destroy();
       return res.json(brandModelYear);
     } catch (erro) {
-      return console.error("Erro na delete (BrandModelYearController): ", erro);
+      return res.status(500).send({error: "Erro na delete (BrandModelYearController)"});
     }
   },
 };

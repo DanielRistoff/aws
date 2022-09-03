@@ -34,11 +34,11 @@ StickNote.init(
       allowNull: false,
     },
     created: {
-      type: DataTypes.DATE,
+      type: sequelize.DataTypes.DATE,
       allowNull: false,
     },
     update: {
-      type: DataTypes.DATE,
+      type: sequelize.DataTypes.DATE,
       allowNull: false,
     },
   },
